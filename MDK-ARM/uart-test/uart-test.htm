@@ -3,7 +3,7 @@
 <title>Static Call Graph - [uart-test\uart-test.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image uart-test\uart-test.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Sun Nov 20 16:00:38 2022
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6140002: Last Updated: Wed Jan 11 16:47:36 2023
 <BR><P>
 <H3>Maximum Stack Usage =        196 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -83,7 +83,7 @@ Function Pointers
  <LI><a href="#[39]">SPI3_IRQHandler</a> from startup_stm32g431xx.o(.text) referenced from startup_stm32g431xx.o(RESET)
  <LI><a href="#[6]">SVC_Handler</a> from startup_stm32g431xx.o(.text) referenced from startup_stm32g431xx.o(RESET)
  <LI><a href="#[9]">SysTick_Handler</a> from startup_stm32g431xx.o(.text) referenced from startup_stm32g431xx.o(RESET)
- <LI><a href="#[51]">SystemInit</a> from lto-llvm-7aa9ad.o(.text.SystemInit) referenced from startup_stm32g431xx.o(.text)
+ <LI><a href="#[51]">SystemInit</a> from lto-llvm-47dfee.o(.text.SystemInit) referenced from startup_stm32g431xx.o(.text)
  <LI><a href="#[21]">TIM1_BRK_TIM15_IRQHandler</a> from startup_stm32g431xx.o(.text) referenced from startup_stm32g431xx.o(RESET)
  <LI><a href="#[24]">TIM1_CC_IRQHandler</a> from startup_stm32g431xx.o(.text) referenced from startup_stm32g431xx.o(RESET)
  <LI><a href="#[23]">TIM1_TRG_COM_TIM17_IRQHandler</a> from startup_stm32g431xx.o(.text) referenced from startup_stm32g431xx.o(RESET)
@@ -109,7 +109,7 @@ Function Pointers
  <LI><a href="#[a]">WWDG_IRQHandler</a> from startup_stm32g431xx.o(.text) referenced from startup_stm32g431xx.o(RESET)
  <LI><a href="#[52]">__main</a> from entry.o(.ARM.Collect$$$$00000000) referenced from startup_stm32g431xx.o(.text)
  <LI><a href="#[53]">_sputc</a> from printfa.o(i._sputc) referenced from printfa.o(i.__0sprintf)
- <LI><a href="#[50]">main</a> from lto-llvm-7aa9ad.o(.text.main) referenced from entry9a.o(.ARM.Collect$$$$0000000B)
+ <LI><a href="#[50]">main</a> from lto-llvm-47dfee.o(.text.main) referenced from entry9a.o(.ARM.Collect$$$$0000000B)
 </UL>
 <P>
 <H3>
@@ -556,10 +556,10 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[51]"></a>SystemInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lto-llvm-7aa9ad.o(.text.SystemInit))
+<P><STRONG><a name="[51]"></a>SystemInit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, lto-llvm-47dfee.o(.text.SystemInit))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32g431xx.o(.text)
 </UL>
-<P><STRONG><a name="[50]"></a>main</STRONG> (Thumb, 14516 bytes, Stack size 104 bytes, lto-llvm-7aa9ad.o(.text.main))
+<P><STRONG><a name="[50]"></a>main</STRONG> (Thumb, 14516 bytes, Stack size 104 bytes, lto-llvm-47dfee.o(.text.main))
 <BR><BR>[Stack]<UL><LI>Max Depth = 196<LI>Call Chain = main &rArr; dac_init &rArr; GPIO_Set
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_dmul
@@ -637,7 +637,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> printfa.o(i.__0sprintf)
 </UL>
-<P><STRONG><a name="[66]"></a>Adc_DMA_Init</STRONG> (Thumb, 1102 bytes, Stack size 24 bytes, lto-llvm-7aa9ad.o(.text.Adc_DMA_Init))
+<P><STRONG><a name="[66]"></a>Adc_DMA_Init</STRONG> (Thumb, 1102 bytes, Stack size 24 bytes, lto-llvm-47dfee.o(.text.Adc_DMA_Init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 60<LI>Call Chain = Adc_DMA_Init &rArr; GPIO_Set
 </UL>
 <BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Set
@@ -645,7 +645,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[67]"></a>GPIO_Set</STRONG> (Thumb, 628 bytes, Stack size 36 bytes, lto-llvm-7aa9ad.o(.text.GPIO_Set))
+<P><STRONG><a name="[67]"></a>GPIO_Set</STRONG> (Thumb, 628 bytes, Stack size 36 bytes, lto-llvm-47dfee.o(.text.GPIO_Set))
 <BR><BR>[Stack]<UL><LI>Max Depth = 36<LI>Call Chain = GPIO_Set
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -653,14 +653,14 @@ Local Symbols
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Adc_DMA_Init
 </UL>
 
-<P><STRONG><a name="[69]"></a>LCD_Address_Set</STRONG> (Thumb, 742 bytes, Stack size 8 bytes, lto-llvm-7aa9ad.o(.text.LCD_Address_Set))
+<P><STRONG><a name="[69]"></a>LCD_Address_Set</STRONG> (Thumb, 742 bytes, Stack size 8 bytes, lto-llvm-47dfee.o(.text.LCD_Address_Set))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = LCD_Address_Set
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 <LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_ShowChar
 </UL>
 
-<P><STRONG><a name="[68]"></a>LCD_ShowChar</STRONG> (Thumb, 1660 bytes, Stack size 40 bytes, lto-llvm-7aa9ad.o(.text.LCD_ShowChar))
+<P><STRONG><a name="[68]"></a>LCD_ShowChar</STRONG> (Thumb, 1660 bytes, Stack size 40 bytes, lto-llvm-47dfee.o(.text.LCD_ShowChar))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = LCD_ShowChar &rArr; LCD_Address_Set
 </UL>
 <BR>[Calls]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LCD_Address_Set
@@ -668,17 +668,17 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6c]"></a>PWM_TIM_INIT</STRONG> (Thumb, 656 bytes, Stack size 16 bytes, lto-llvm-7aa9ad.o(.text.PWM_TIM_INIT))
+<P><STRONG><a name="[6c]"></a>PWM_TIM_INIT</STRONG> (Thumb, 636 bytes, Stack size 16 bytes, lto-llvm-47dfee.o(.text.PWM_TIM_INIT))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = PWM_TIM_INIT
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6d]"></a>SPI1_DMA_START</STRONG> (Thumb, 186 bytes, Stack size 0 bytes, lto-llvm-7aa9ad.o(.text.SPI1_DMA_START))
+<P><STRONG><a name="[6d]"></a>SPI1_DMA_START</STRONG> (Thumb, 186 bytes, Stack size 0 bytes, lto-llvm-47dfee.o(.text.SPI1_DMA_START))
 <BR><BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6a]"></a>dac_init</STRONG> (Thumb, 2800 bytes, Stack size 56 bytes, lto-llvm-7aa9ad.o(.text.dac_init))
+<P><STRONG><a name="[6a]"></a>dac_init</STRONG> (Thumb, 2800 bytes, Stack size 56 bytes, lto-llvm-47dfee.o(.text.dac_init))
 <BR><BR>[Stack]<UL><LI>Max Depth = 92<LI>Call Chain = dac_init &rArr; GPIO_Set
 </UL>
 <BR>[Calls]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Set
@@ -686,7 +686,7 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[6b]"></a>delay_ms</STRONG> (Thumb, 668 bytes, Stack size 16 bytes, lto-llvm-7aa9ad.o(.text.delay_ms))
+<P><STRONG><a name="[6b]"></a>delay_ms</STRONG> (Thumb, 668 bytes, Stack size 16 bytes, lto-llvm-47dfee.o(.text.delay_ms))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = delay_ms
 </UL>
 <BR>[Called By]<UL><LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main

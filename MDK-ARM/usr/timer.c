@@ -139,8 +139,8 @@ void PWM_TIM_INIT(u8 t1,u8 t2,u8 d1,u8 d2)
 	RCC->APB2RSTR |= 3 << 17;
 	delay_ms(1);
 	RCC->APB2RSTR -= 3 << 17;
-	RCC->AHB2ENR|=1;
-	GPIO_Set_withAF(GPIOA,PIN6|PIN7,GPIO_OTYPE_PP,3,GPIO_PUPD_PU,1);	
+	RCC->AHB2ENR|=3;
+	GPIO_Set_withAF(GPIOB,PIN6|PIN7,GPIO_OTYPE_PP,3,GPIO_PUPD_PU,1);	
 	if(t1){
 		RCC->APB2ENR|=1<<17;				//TIM16时钟使能  
 
@@ -148,13 +148,13 @@ void PWM_TIM_INIT(u8 t1,u8 t2,u8 d1,u8 d2)
 		while((RCC->APB2ENR&(1<<17))==0);	//等待时钟设置OK  
 		TIM16->ARR=pwm_lut[t1][0]-1;	//设定计数器自动重装值 
 		TIM16->PSC=pwm_lut[t1][1]-1;	//预分频器
+		TIM16->CCR1=d1;
 		TIM16->CR1|=1<<7;				//使能自动装载
 
 		TIM16->CCMR1 |= 0X6 << 4;
 		TIM16->CCMR1 |= 3 << 2;
-		TIM16->CCR1 = d1<<1;
 		TIM16->EGR |= 1 << 0;
-		TIM16->CCER |= 1 << 0;
+		TIM16->CCER |= 1 << 2;
 		TIM16->BDTR |= 1<<15;
 		TIM16->CR1 |= 1 << 0;
 	}
@@ -164,13 +164,13 @@ void PWM_TIM_INIT(u8 t1,u8 t2,u8 d1,u8 d2)
 		while((RCC->APB2ENR&(1<<18))==0);	//等待时钟设置OK  
 		TIM17->ARR=pwm_lut[t2][0]-1;	//设定计数器自动重装值 
 		TIM17->PSC=pwm_lut[t2][1]-1;	//预分频器
+		TIM17->CCR1=d2;
 		TIM17->CR1|=1<<7;				//使能自动装载
 
 		TIM17->CCMR1 |= 0X6 << 4;
 		TIM17->CCMR1 |= 3 << 2;
-		TIM17->CCR1 = d2;
 		TIM17->EGR |= 1 << 0;
-		TIM17->CCER |= 5 << 0;
+		TIM17->CCER |= 1 << 2;
 		TIM17->BDTR |= 1<< 15;
 		TIM17->CR1 |= 1 << 0;
 	}	

@@ -218,7 +218,7 @@ void osc_showpwm(u16 x,u8 y){
 	LCD_ShowString(x+30,y,s,func_wcolor(OSC_PWM1_FREQ,WHITE,PWM_COLOR,BLACK),\
 	PWM_COLOR,!func_hit(OSC_PWM1_FREQ));
 	if(oscdev.pwm1_freq){
-		sprintf(s,"%2d%%",oscdev.pwm1_duty*10);
+		sprintf(s,"%3d%%",oscdev.pwm1_duty*10);
 		LCD_ShowString(x+72,y,s,func_wcolor(OSC_PWM1_DUTY,WHITE,PWM_COLOR,BLACK),\
 	PWM_COLOR,!func_hit(OSC_PWM1_DUTY));	
 	}
@@ -235,7 +235,7 @@ void osc_showpwm(u16 x,u8 y){
 	PWM_COLOR,!func_hit(OSC_PWM2_FREQ));
 	sprintf(s,"40%%");
 	if(oscdev.pwm2_freq){
-		sprintf(s,"%2d%%",oscdev.pwm2_duty*10);
+		sprintf(s,"%3d%%",oscdev.pwm2_duty*10);
 		LCD_ShowString(x+174,y,s,func_wcolor(OSC_PWM2_DUTY,WHITE,PWM_COLOR,BLACK),\
 	PWM_COLOR,!func_hit(OSC_PWM2_DUTY));	
 	}		
